@@ -6,7 +6,10 @@ import "@openzeppelin/contracts/token/ERC20/extensions/draft-ERC20Permit.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Votes.sol";
 
 contract GS is ERC20, ERC20Permit, ERC20Votes {
+    uint256 public s_maxSupply = 16000000 * (10**18);
+
     constructor() ERC20("GammaSwap", "GS") ERC20Permit("GS") {
+        _mint(msg.sender, s_maxSupply);
     }
 
     // The functions below are overrides required by Solidity.

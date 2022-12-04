@@ -9,8 +9,7 @@ import "@openzeppelin/contracts/governance/extensions/GovernorVotesQuorumFractio
 import "@openzeppelin/contracts/governance/extensions/GovernorTimelockControl.sol";
 
 contract GammaSwapGovernor is Governor, GovernorSettings, GovernorCountingSimple, GovernorVotes, GovernorVotesQuorumFraction, GovernorTimelockControl {
-    //19200 /* 3 day */, 44800 /* 1 week */, 1e18 /* 1% */
-    //5 /* 5% */
+
     constructor(IVotes _token, TimelockController _timelock, uint256 _quorumPercentage, uint256 _votingPeriod, uint256 _votingDelay, uint256 _proposalThreshold)
         Governor("GammaSwapGovernor")
         GovernorSettings(_votingDelay, _votingPeriod, _proposalThreshold)
@@ -27,6 +26,10 @@ contract GammaSwapGovernor is Governor, GovernorSettings, GovernorCountingSimple
 
     function votingPeriod() public view override(IGovernor, GovernorSettings) returns (uint256) {
         return super.votingPeriod();
+    }
+
+    function quorumPercentage() public view returns (uint256) {
+        return super.quorumNumerator();
     }
 
     function quorum(uint256 blockNumber) public view override(IGovernor, GovernorVotesQuorumFraction) returns (uint256) {

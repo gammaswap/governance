@@ -1,7 +1,6 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types"
 import { DeployFunction } from "hardhat-deploy/types"
-import verify from "../helper-functions"
-import { networkConfig, developmentChains, ADDRESS_ZERO } from "../helper-hardhat-config"
+import { ADDRESS_ZERO } from "../helper-hardhat-config"
 import { ethers } from "hardhat"
 
 const setupContracts: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
@@ -26,8 +25,8 @@ const setupContracts: DeployFunction = async function (hre: HardhatRuntimeEnviro
     await executorTx.wait(1)
     const revokeTx = await timeLock.revokeRole(adminRole, deployer)
     await revokeTx.wait(1)
-    // Guess what? Now, anything the timelock wants to do has to go through the governance process!
+    // Now, anything the timelock wants to do has to go through the governance process!
 }
 
 export default setupContracts
-setupContracts.tags = ["all", "setup"]
+setupContracts.tags = ["all", "setup", "prod"]

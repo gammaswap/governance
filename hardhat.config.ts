@@ -1,13 +1,14 @@
-import "@typechain/hardhat"
+import "@nomicfoundation/hardhat-toolbox";
 import "@nomicfoundation/hardhat-chai-matchers"
 import "@nomiclabs/hardhat-etherscan"
 import "@nomiclabs/hardhat-ethers"
+import "@layerzerolabs/ua-utils"
 import "hardhat-gas-reporter"
 import "dotenv/config"
 import "solidity-coverage"
 import "hardhat-deploy"
 import { HardhatUserConfig } from "hardhat/config"
-import "@nomicfoundation/hardhat-toolbox";
+import "@typechain/hardhat"
 
 require("hardhat-contract-sizer"); // "npx hardhat size-contracts" or "yarn run hardhat size-contracts"
 

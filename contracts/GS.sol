@@ -2,13 +2,14 @@
 pragma solidity ^0.8.2;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/token/ERC20/extensions/draft-ERC20Permit.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Votes.sol";
+import "@layerzerolabs/solidity-examples/contracts/token/oft/OFT.sol";
 
-contract GS is ERC20, ERC20Permit, ERC20Votes {
+contract GS is ERC20, ERC20Permit, ERC20Votes, OFT {
     uint256 public s_maxSupply = 16000000 * (10**18);
 
-    constructor() ERC20("GammaSwap", "GS") ERC20Permit("GS") {
+    constructor(address lzEndpoint) OFT("GammaSwap", "GS", lzEndpoint) ERC20Permit("GS") {
         _mint(msg.sender, s_maxSupply);
     }
 

@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@gnosis.pm/safe-core-sdk": "^3.2.0",
+    "@gnosis.pm/safe-core-sdk-types": "^1.7.0",
+    "@gnosis.pm/safe-ethers-lib": "^1.7.0",
+    "@gnosis.pm/safe-service-client": "^1.4.0",
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.5",
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
@@ -19,6 +23,7 @@
     "@types/mocha": "^10.0.1",
     "@types/node": "^18.11.10",
     "chai": "^4.3.7",
+    "cli-ux": "^6.0.9",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "ethers": "^5.7.2",
@@ -38,6 +43,9 @@
     "typescript": "^4.9.3"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^4.8.0"
+    "@layerzerolabs/lz-sdk": "^0.0.24",
+    "@layerzerolabs/solidity-examples": "^0.0.11",
+    "@layerzerolabs/ua-utils": "latest",
+    "@openzeppelin/contracts": "^4.9.2"
   }
 }

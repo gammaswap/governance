@@ -1,0 +1,24 @@
+{
+  "contractConfig": {
+    "name": "GS"
+  },
+  "chainConfig": {
+    "goerli": {
+      "useCustomAdapterParams": true,
+      "remoteNetworkConfig": {
+        "arbitrum-goerli":  {
+          "minDstGasConfig": [2000000]
+        }
+      }
+    },
+    "arbitrum-goerli": {
+      "useCustomAdapterParams": true,
+      "remoteNetworkConfig": {
+        "goerli":  {
+          "minDstGasConfig": [100000]
+        }
+      }
+    }
+  }
+}
+
